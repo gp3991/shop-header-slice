@@ -13,7 +13,7 @@ No installation is required to see the result.
 
 - **HTML5** — semantic markup (`<header>`, `<nav>`, `<form role="search">`), inline SVG.
 - **SCSS** → CSS (Dart Sass), mobile-first, **BEM** naming, CSS custom properties.
-- **Vanilla JS** — mobile drawer (hamburger) with accessibility support (aria, ESC, focus trap).
+- **Vanilla JS** — mobile drawer (hamburger) with accessibility support (aria, ESC, focus trap) and a sticky-header shadow on scroll.
 - No CSS frameworks.
 
 ## Working with styles
@@ -34,12 +34,13 @@ src/scss/
   _variables.scss     # tokens: colors, breakpoints, spacing, font
   _base.scss          # reset, container, a11y helpers, focus
   _topbar.scss        # utility bar (top)
-  _header.scss        # main bar + RWD orchestration + hamburger
+  _header.scss        # sticky wrapper + main bar + RWD orchestration + hamburger
   _search.scss        # search field
   _actions.scss       # favourites / account / cart + separators
-  _drawer.scss        # mobile drawer
+  _drawer.scss        # mobile drawer + close (X) button
+  _products.scss      # demo product grid (out of task scope — page filler)
 css/style.css         # COMPILED (committed)
-js/nav.js             # mobile drawer logic
+js/nav.js             # mobile drawer + sticky-header shadow
 asset/                # original SVG icons (source; inlined into the HTML)
 ```
 
@@ -68,8 +69,13 @@ No markup duplication — the same HTML drives all three layouts.
   The originals remain in `asset/` as the source.
 - **Outfit font** loaded from Google Fonts (`400` as the base/Regular + `500/600/700` for
   `LOGO`, `Lorem ipsum` and labels). Offline alternative: self-host the `woff2` files via `@font-face`.
+- **Sticky header** — `position: sticky` on the outer `<header>`; a soft shadow is toggled from JS
+  (`.is-stuck`) only once the page scrolls under the bar. Stacking stays below the mobile drawer.
+- **Mobile search** — the "Szukaj" label collapses to the bare magnifier on phones so the placeholder
+  stays readable; the label returns from tablet up (matching the design). The icon button keeps an
+  `aria-label`, so it has an accessible name in both states.
 - **Accessibility**: skip link, visible `:focus-visible`, `role="search"` with a hidden label,
-  `aria-expanded`/`aria-hidden` for the drawer, focus trap and ESC handling.
+  `aria-expanded`/`aria-hidden` for the drawer, explicit close (X) button, focus trap and ESC handling.
 
 ## PrestaShop integration (note)
 
