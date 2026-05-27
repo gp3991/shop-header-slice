@@ -32,15 +32,14 @@
 
     if (open) {
       // The panel slides in from visibility:hidden and isn't focusable until that
-      // transition ends, so move focus into it once the animation finishes.
+      // transition ends, so move focus into it once the animation finishes. We focus
+      // the panel itself (tabindex="-1") rather than the first link, so opening by tap
+      // doesn't paint a "selected"-looking focus ring on a menu item.
       drawer.addEventListener('transitionend', function () {
         if (!isOpen()) {
           return; // closed again before the open animation finished
         }
-        var firstLink = drawer.querySelector('.drawer__link');
-        if (firstLink) {
-          firstLink.focus();
-        }
+        drawer.focus();
       }, { once: true });
     } else if (returnFocus !== false) {
       burger.focus();
@@ -89,11 +88,14 @@
     }
     var first = focusables[0];
     var last = focusables[focusables.length - 1];
+    var active = document.activeElement;
 
-    if (event.shiftKey && document.activeElement === first) {
+    // Shift+Tab from the first control — or from the panel itself, which holds focus
+    // right after opening — wraps to the last; Tab from the last wraps to the first.
+    if (event.shiftKey && (active === first || active === drawer)) {
       event.preventDefault();
       last.focus();
-    } else if (!event.shiftKey && document.activeElement === last) {
+    } else if (!event.shiftKey && active === last) {
       event.preventDefault();
       first.focus();
     }

@@ -435,6 +435,9 @@ ul {
   visibility: visible;
   transform: translateX(0);
 }
+.drawer:focus {
+  outline: none;
+}
 .drawer__close {
   align-self: flex-end;
   display: inline-flex;

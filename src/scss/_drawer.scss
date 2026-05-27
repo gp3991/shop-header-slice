@@ -25,6 +25,12 @@
     transform: translateX(0);
   }
 
+  // Focus lands on the panel itself on open (it's a container, not a control),
+  // so suppress the ring here — keyboard focus on the links/close button keeps it.
+  &:focus {
+    outline: none;
+  }
+
   // Close button (X) — top-right corner of the panel
   &__close {
     align-self: flex-end;
