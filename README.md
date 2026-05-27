@@ -6,8 +6,10 @@ A responsive header coded from the `layout.png` design. Recruitment task (front-
 
 ## Quick preview
 
-The compiled CSS is committed in the repo — just open **`index.html`** in a browser.
-No installation is required to see the result.
+**Live demo:** https://gp3991.github.io/shop-header-slice/
+
+The compiled CSS is committed in the repo — just open **`index.html`** in a browser
+(locally or via the live demo above). No installation is required to see the result.
 
 ## Stack
 
