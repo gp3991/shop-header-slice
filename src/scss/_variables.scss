@@ -1,0 +1,34 @@
+// ===== Design tokens =====
+
+// Breakpoints (mobile-first, min-width)
+$bp-tablet: 768px;   // >= tablet: utility bar + icon labels, single-row layout
+$bp-desktop: 1200px; // >= desktop: centered search grid
+
+// Breakpoint mixin
+@mixin from($bp) {
+  @media (min-width: $bp) {
+    @content;
+  }
+}
+
+:root {
+  // Colors
+  --c-bg: #ffffff;
+  --c-ink: #111111;          // text, logo, search border
+  --c-ink-soft: #4a4a4a;     // secondary text
+  --c-line: #111111;         // main bar borders
+  --c-line-soft: #d8d8d8;    // action separators, utility bar border
+  --c-muted: #f4f4f4;        // hover / field background
+  --c-accent: #dc2626;       // hover accent (text + icons)
+  --c-focus: var(--c-accent); // focus outline shares the accent
+
+  // Typography
+  --font: "Outfit", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+
+  // Layout
+  --container-max: 1920px;                  // matches the 1920-wide design
+  --container-pad: clamp(1rem, 3vw, 3rem);  // small side margins (~48px at 1920)
+
+  --header-h: 6rem;          // main bar height (desktop)
+  --radius: 4px;
+}

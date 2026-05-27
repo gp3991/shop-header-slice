@@ -1,0 +1,14 @@
+{
+  "name": "nav-header-slice",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Responsywny nagłówek sklepu — pocięcie z grafiki (zadanie rekrutacyjne).",
+  "scripts": {
+    "build": "sass src/scss/style.scss css/style.css --style=expanded",
+    "build:min": "sass src/scss/style.scss css/style.css --style=compressed",
+    "watch": "sass --watch src/scss/style.scss css/style.css"
+  },
+  "devDependencies": {
+    "sass": "^1.77.0"
+  }
+}

@@ -1,0 +1,60 @@
+@use 'variables' as *;
+
+// ===== Demo product grid (out of task scope — page filler) =====
+// Turbo-simple fake product cards, only to give the page some content.
+
+.products {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.product {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid var(--c-line-soft);
+  border-radius: var(--radius);
+  overflow: hidden;
+  background: var(--c-bg);
+
+  // fake thumbnail — just a flat placeholder box
+  &__thumb {
+    aspect-ratio: 1 / 1;
+    background: var(--c-muted);
+  }
+
+  &__body {
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
+    padding: 0.85rem 1rem 1.1rem;
+  }
+
+  &__title {
+    margin: 0;
+    font-size: 1rem;
+    font-weight: 500;
+  }
+
+  &__price {
+    margin: 0 0 0.5rem;
+    font-weight: 700;
+  }
+
+  &__btn {
+    margin-top: auto;
+    padding: 0.6rem 1rem;
+    border: 0;
+    border-radius: var(--radius);
+    background: var(--c-ink);
+    color: #fff;
+    font: inherit;
+    cursor: pointer;
+    transition: background 0.2s ease;
+
+    &:hover {
+      background: var(--c-accent);
+    }
+  }
+}

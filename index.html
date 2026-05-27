@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nagłówek sklepu — pocięcie</title>
+  <meta name="description" content="Responsywny nagłówek sklepu — zadanie rekrutacyjne.">
+
+  <!-- Outfit (Google Fonts). Base Regular 400; heavier weights for LOGO / labels. -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Przejdź do treści</a>
+
+  <header class="site-header">
+
+    <!-- ===== Utility bar (top) ===== -->
+    <div class="topbar">
+      <div class="container topbar__inner">
+        <nav class="topbar__nav" aria-label="Linki pomocnicze">
+          <ul class="topbar__list">
+            <li><a class="topbar__link" href="#">Centrum pomocy</a></li>
+            <li><a class="topbar__link" href="#">Strefa wiedzy</a></li>
+            <li><a class="topbar__link" href="#">Kontakt</a></li>
+          </ul>
+        </nav>
+        <p class="topbar__brand">Lorem ipsum</p>
+      </div>
+    </div>
+
+    <!-- ===== Main bar ===== -->
+    <div class="header">
+      <div class="container header__inner">
+
+        <!-- Hamburger (mobile only) -->
+        <button class="burger" type="button" aria-label="Otwórz menu"
+                aria-expanded="false" aria-controls="mobile-drawer">
+          <span class="burger__box" aria-hidden="true">
+            <span class="burger__line"></span>
+            <span class="burger__line"></span>
+            <span class="burger__line"></span>
+          </span>
+        </button>
+
+        <!-- Logo -->
+        <a class="logo" href="#" aria-label="Strona główna">LOGO</a>
+
+        <!-- Search -->
+        <form class="search" role="search" action="#" method="get">
+          <label class="visually-hidden" for="search-input">Wyszukaj produkt</label>
+          <input class="search__input" id="search-input" type="search" name="q"
+                 placeholder="Wpisz nazwę lub kod produktu" autocomplete="off">
+          <button class="search__submit" type="submit" aria-label="Szukaj">
+            <span class="search__text">Szukaj</span>
+            <span class="search__icon" aria-hidden="true">
+              <!-- asset/Icon - search.svg -->
+              <svg viewBox="0 0 20.197 20.197" fill="currentColor" focusable="false" aria-hidden="true">
+                <path d="M12.119,20.237a8.071,8.071,0,0,0,4.856-1.623L22.557,24.2l1.64-1.641-5.583-5.583a8.111,8.111,0,1,0-6.5,3.263Zm0-13.918a5.8,5.8,0,1,1-5.8,5.8A5.806,5.806,0,0,1,12.119,6.32Z" transform="translate(-4 -4)"/>
+              </svg>
+            </span>
+          </button>
+        </form>
+
+        <!-- Actions: favourites / account / cart -->
+        <nav class="actions" aria-label="Konto i koszyk">
+          <a class="actions__item" href="#">
+            <span class="actions__icon" aria-hidden="true">
+              <!-- asset/Shopicon.svg (heart) -->
+              <svg viewBox="0 0 21.667 19.905" fill="currentColor" focusable="false" aria-hidden="true">
+                <path d="M6.407,18.374l8.426,8.531,8.426-8.531a6.423,6.423,0,0,0,2.407-5.055A6.177,6.177,0,0,0,19.648,7a5.921,5.921,0,0,0-4.815,2.534A5.921,5.921,0,0,0,10.018,7,6.177,6.177,0,0,0,4,13.319,6.423,6.423,0,0,0,6.407,18.374Zm3.611-9.1A3.761,3.761,0,0,1,13.1,10.9l1.734,2.431L16.568,10.9a3.761,3.761,0,0,1,3.08-1.623A3.956,3.956,0,0,1,23.5,13.319a4.1,4.1,0,0,1-1.544,3.238l-.106.084-.1.1-6.921,7.008L7.911,16.737l-.1-.1-.106-.084a4.1,4.1,0,0,1-1.544-3.238A3.956,3.956,0,0,1,10.018,9.275Z" transform="translate(-4 -7)"/>
+              </svg>
+            </span>
+            <span class="actions__label">Ulubione</span>
+          </a>
+
+          <a class="actions__item" href="#">
+            <span class="actions__icon" aria-hidden="true">
+              <!-- asset/user.svg -->
+              <svg viewBox="0 0 19.095 19.095" fill="currentColor" focusable="false" aria-hidden="true">
+                <g transform="translate(0.4 0.4)">
+                  <path d="M15.616,11.827a9.113,9.113,0,0,0-3.476-2.18,5.289,5.289,0,1,0-5.984,0A9.162,9.162,0,0,0,0,18.3H1.429a7.718,7.718,0,0,1,15.437,0H18.3A9.088,9.088,0,0,0,15.616,11.827ZM9.148,9.148a3.859,3.859,0,1,1,3.859-3.859A3.864,3.864,0,0,1,9.148,9.148Z" stroke="currentColor" stroke-width="0.8"/>
+                </g>
+              </svg>
+            </span>
+            <span class="actions__label">Panel</span>
+          </a>
+
+          <a class="actions__item" href="#">
+            <span class="actions__icon" aria-hidden="true">
+              <!-- asset/Icon - cart.svg -->
+              <svg viewBox="0 0 17.761 21.174" fill="none" stroke="currentColor" stroke-width="2" focusable="false" aria-hidden="true">
+                <g transform="translate(-81.667 -25.667)">
+                  <path d="M87.339,201.333H82.667V213.56a1.625,1.625,0,0,0,1.625,1.625H96.8a1.625,1.625,0,0,0,1.625-1.625V201.333H89.776" transform="translate(0 -169.345)"/>
+                  <path d="M241.167,35.726V27.479l-.812-.812h-4.875l-.812.812v8.246" transform="translate(-147.369)"/>
+                </g>
+              </svg>
+            </span>
+            <span class="actions__label">Koszyk</span>
+          </a>
+        </nav>
+      </div>
+    </div>
+
+    <!-- ===== Mobile drawer (utility-bar links) ===== -->
+    <div class="drawer" id="mobile-drawer" aria-hidden="true">
+      <button class="drawer__close" type="button" aria-label="Zamknij menu">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+             stroke-linecap="round" focusable="false" aria-hidden="true">
+          <path d="M6 6l12 12M18 6L6 18" />
+        </svg>
+      </button>
+      <nav class="drawer__nav" aria-label="Menu mobilne">
+        <ul class="drawer__list">
+          <li><a class="drawer__link" href="#">Centrum pomocy</a></li>
+          <li><a class="drawer__link" href="#">Strefa wiedzy</a></li>
+          <li><a class="drawer__link" href="#">Kontakt</a></li>
+        </ul>
+        <p class="drawer__brand">Lorem ipsum</p>
+      </nav>
+    </div>
+    <div class="drawer-backdrop" hidden></div>
+
+  </header>
+
+  <!-- Demo content (out of task scope — backdrop for evaluating the header) -->
+  <main id="main" class="demo">
+    <div class="container">
+      <!-- Demo product grid (page filler) -->
+      <h1>Polecane produkty</h1>
+      <div class="products">
+        <article class="product">
+          <div class="product__thumb"></div>
+          <div class="product__body">
+            <h2 class="product__title">Koszulka</h2>
+            <p class="product__price">59,00 zł</p>
+            <button class="product__btn" type="button">Do koszyka</button>
+          </div>
+        </article>
+        <article class="product">
+          <div class="product__thumb"></div>
+          <div class="product__body">
+            <h2 class="product__title">Bluza</h2>
+            <p class="product__price">149,00 zł</p>
+            <button class="product__btn" type="button">Do koszyka</button>
+          </div>
+        </article>
+        <article class="product">
+          <div class="product__thumb"></div>
+          <div class="product__body">
+            <h2 class="product__title">Jeansy</h2>
+            <p class="product__price">199,00 zł</p>
+            <button class="product__btn" type="button">Do koszyka</button>
+          </div>
+        </article>
+        <article class="product">
+          <div class="product__thumb"></div>
+          <div class="product__body">
+            <h2 class="product__title">Kurtka</h2>
+            <p class="product__price">299,00 zł</p>
+            <button class="product__btn" type="button">Do koszyka</button>
+          </div>
+        </article>
+        <article class="product">
+          <div class="product__thumb"></div>
+          <div class="product__body">
+            <h2 class="product__title">Sukienka</h2>
+            <p class="product__price">179,00 zł</p>
+            <button class="product__btn" type="button">Do koszyka</button>
+          </div>
+        </article>
+        <article class="product">
+          <div class="product__thumb"></div>
+          <div class="product__body">
+            <h2 class="product__title">Sneakersy</h2>
+            <p class="product__price">249,00 zł</p>
+            <button class="product__btn" type="button">Do koszyka</button>
+          </div>
+        </article>
+        <article class="product">
+          <div class="product__thumb"></div>
+          <div class="product__body">
+            <h2 class="product__title">Czapka</h2>
+            <p class="product__price">49,00 zł</p>
+            <button class="product__btn" type="button">Do koszyka</button>
+          </div>
+        </article>
+        <article class="product">
+          <div class="product__thumb"></div>
+          <div class="product__body">
+            <h2 class="product__title">Skarpetki</h2>
+            <p class="product__price">29,00 zł</p>
+            <button class="product__btn" type="button">Do koszyka</button>
+          </div>
+        </article>
+        <article class="product">
+          <div class="product__thumb"></div>
+          <div class="product__body">
+            <h2 class="product__title">Szalik</h2>
+            <p class="product__price">89,00 zł</p>
+            <button class="product__btn" type="button">Do koszyka</button>
+          </div>
+        </article>
+        <article class="product">
+          <div class="product__thumb"></div>
+          <div class="product__body">
+            <h2 class="product__title">Plecak</h2>
+            <p class="product__price">159,00 zł</p>
+            <button class="product__btn" type="button">Do koszyka</button>
+          </div>
+        </article>
+        <article class="product">
+          <div class="product__thumb"></div>
+          <div class="product__body">
+            <h2 class="product__title">Pasek</h2>
+            <p class="product__price">119,00 zł</p>
+            <button class="product__btn" type="button">Do koszyka</button>
+          </div>
+        </article>
+        <article class="product">
+          <div class="product__thumb"></div>
+          <div class="product__body">
+            <h2 class="product__title">Okulary</h2>
+            <p class="product__price">139,00 zł</p>
+            <button class="product__btn" type="button">Do koszyka</button>
+          </div>
+        </article>
+        <article class="product">
+          <div class="product__thumb"></div>
+          <div class="product__body">
+            <h2 class="product__title">Zegarek</h2>
+            <p class="product__price">399,00 zł</p>
+            <button class="product__btn" type="button">Do koszyka</button>
+          </div>
+        </article>
+        <article class="product">
+          <div class="product__thumb"></div>
+          <div class="product__body">
+            <h2 class="product__title">Portfel</h2>
+            <p class="product__price">99,00 zł</p>
+            <button class="product__btn" type="button">Do koszyka</button>
+          </div>
+        </article>
+        <article class="product">
+          <div class="product__thumb"></div>
+          <div class="product__body">
+            <h2 class="product__title">Rękawiczki</h2>
+            <p class="product__price">69,00 zł</p>
+            <button class="product__btn" type="button">Do koszyka</button>
+          </div>
+        </article>
+        <article class="product">
+          <div class="product__thumb"></div>
+          <div class="product__body">
+            <h2 class="product__title">T-shirt</h2>
+            <p class="product__price">69,00 zł</p>
+            <button class="product__btn" type="button">Do koszyka</button>
+          </div>
+        </article>
+        <article class="product">
+          <div class="product__thumb"></div>
+          <div class="product__body">
+            <h2 class="product__title">Sweter</h2>
+            <p class="product__price">129,00 zł</p>
+            <button class="product__btn" type="button">Do koszyka</button>
+          </div>
+        </article>
+        <article class="product">
+          <div class="product__thumb"></div>
+          <div class="product__body">
+            <h2 class="product__title">Marynarka</h2>
+            <p class="product__price">349,00 zł</p>
+            <button class="product__btn" type="button">Do koszyka</button>
+          </div>
+        </article>
+        <article class="product">
+          <div class="product__thumb"></div>
+          <div class="product__body">
+            <h2 class="product__title">Spódnica</h2>
+            <p class="product__price">109,00 zł</p>
+            <button class="product__btn" type="button">Do koszyka</button>
+          </div>
+        </article>
+        <article class="product">
+          <div class="product__thumb"></div>
+          <div class="product__body">
+            <h2 class="product__title">Koszula</h2>
+            <p class="product__price">119,00 zł</p>
+            <button class="product__btn" type="button">Do koszyka</button>
+          </div>
+        </article>
+        <article class="product">
+          <div class="product__thumb"></div>
+          <div class="product__body">
+            <h2 class="product__title">Szorty</h2>
+            <p class="product__price">79,00 zł</p>
+            <button class="product__btn" type="button">Do koszyka</button>
+          </div>
+        </article>
+        <article class="product">
+          <div class="product__thumb"></div>
+          <div class="product__body">
+            <h2 class="product__title">Buty</h2>
+            <p class="product__price">219,00 zł</p>
+            <button class="product__btn" type="button">Do koszyka</button>
+          </div>
+        </article>
+        <article class="product">
+          <div class="product__thumb"></div>
+          <div class="product__body">
+            <h2 class="product__title">Kapcie</h2>
+            <p class="product__price">39,00 zł</p>
+            <button class="product__btn" type="button">Do koszyka</button>
+          </div>
+        </article>
+        <article class="product">
+          <div class="product__thumb"></div>
+          <div class="product__body">
+            <h2 class="product__title">Sandały</h2>
+            <p class="product__price">99,00 zł</p>
+            <button class="product__btn" type="button">Do koszyka</button>
+          </div>
+        </article>
+        <article class="product">
+          <div class="product__thumb"></div>
+          <div class="product__body">
+            <h2 class="product__title">Krawat</h2>
+            <p class="product__price">59,00 zł</p>
+            <button class="product__btn" type="button">Do koszyka</button>
+          </div>
+        </article>
+        <article class="product">
+          <div class="product__thumb"></div>
+          <div class="product__body">
+            <h2 class="product__title">Muszka</h2>
+            <p class="product__price">39,00 zł</p>
+            <button class="product__btn" type="button">Do koszyka</button>
+          </div>
+        </article>
+        <article class="product">
+          <div class="product__thumb"></div>
+          <div class="product__body">
+            <h2 class="product__title">Chusta</h2>
+            <p class="product__price">49,00 zł</p>
+            <button class="product__btn" type="button">Do koszyka</button>
+          </div>
+        </article>
+        <article class="product">
+          <div class="product__thumb"></div>
+          <div class="product__body">
+            <h2 class="product__title">Beanie</h2>
+            <p class="product__price">45,00 zł</p>
+            <button class="product__btn" type="button">Do koszyka</button>
+          </div>
+        </article>
+        <article class="product">
+          <div class="product__thumb"></div>
+          <div class="product__body">
+            <h2 class="product__title">Torebka</h2>
+            <p class="product__price">189,00 zł</p>
+            <button class="product__btn" type="button">Do koszyka</button>
+          </div>
+        </article>
+        <article class="product">
+          <div class="product__thumb"></div>
+          <div class="product__body">
+            <h2 class="product__title">Walizka</h2>
+            <p class="product__price">279,00 zł</p>
+            <button class="product__btn" type="button">Do koszyka</button>
+          </div>
+        </article>
+        <article class="product">
+          <div class="product__thumb"></div>
+          <div class="product__body">
+            <h2 class="product__title">Nerka</h2>
+            <p class="product__price">79,00 zł</p>
+            <button class="product__btn" type="button">Do koszyka</button>
+          </div>
+        </article>
+        <article class="product">
+          <div class="product__thumb"></div>
+          <div class="product__body">
+            <h2 class="product__title">Parasol</h2>
+            <p class="product__price">55,00 zł</p>
+            <button class="product__btn" type="button">Do koszyka</button>
+          </div>
+        </article>
+        <article class="product">
+          <div class="product__thumb"></div>
+          <div class="product__body">
+            <h2 class="product__title">Bidon</h2>
+            <p class="product__price">35,00 zł</p>
+            <button class="product__btn" type="button">Do koszyka</button>
+          </div>
+        </article>
+        <article class="product">
+          <div class="product__thumb"></div>
+          <div class="product__body">
+            <h2 class="product__title">Kubek</h2>
+            <p class="product__price">25,00 zł</p>
+            <button class="product__btn" type="button">Do koszyka</button>
+          </div>
+        </article>
+        <article class="product">
+          <div class="product__thumb"></div>
+          <div class="product__body">
+            <h2 class="product__title">Notes</h2>
+            <p class="product__price">19,00 zł</p>
+            <button class="product__btn" type="button">Do koszyka</button>
+          </div>
+        </article>
+        <article class="product">
+          <div class="product__thumb"></div>
+          <div class="product__body">
+            <h2 class="product__title">Długopis</h2>
+            <p class="product__price">12,00 zł</p>
+            <button class="product__btn" type="button">Do koszyka</button>
+          </div>
+        </article>
+        <article class="product">
+          <div class="product__thumb"></div>
+          <div class="product__body">
+            <h2 class="product__title">Etui</h2>
+            <p class="product__price">29,00 zł</p>
+            <button class="product__btn" type="button">Do koszyka</button>
+          </div>
+        </article>
+        <article class="product">
+          <div class="product__thumb"></div>
+          <div class="product__body">
+            <h2 class="product__title">Słuchawki</h2>
+            <p class="product__price">199,00 zł</p>
+            <button class="product__btn" type="button">Do koszyka</button>
+          </div>
+        </article>
+        <article class="product">
+          <div class="product__thumb"></div>
+          <div class="product__body">
+            <h2 class="product__title">Ładowarka</h2>
+            <p class="product__price">69,00 zł</p>
+            <button class="product__btn" type="button">Do koszyka</button>
+          </div>
+        </article>
+        <article class="product">
+          <div class="product__thumb"></div>
+          <div class="product__body">
+            <h2 class="product__title">Powerbank</h2>
+            <p class="product__price">99,00 zł</p>
+            <button class="product__btn" type="button">Do koszyka</button>
+          </div>
+        </article>
+        <article class="product">
+          <div class="product__thumb"></div>
+          <div class="product__body">
+            <h2 class="product__title">Lampka</h2>
+            <p class="product__price">89,00 zł</p>
+            <button class="product__btn" type="button">Do koszyka</button>
+          </div>
+        </article>
+        <article class="product">
+          <div class="product__thumb"></div>
+          <div class="product__body">
+            <h2 class="product__title">Świeca</h2>
+            <p class="product__price">35,00 zł</p>
+            <button class="product__btn" type="button">Do koszyka</button>
+          </div>
+        </article>
+        <article class="product">
+          <div class="product__thumb"></div>
+          <div class="product__body">
+            <h2 class="product__title">Koc</h2>
+            <p class="product__price">119,00 zł</p>
+            <button class="product__btn" type="button">Do koszyka</button>
+          </div>
+        </article>
+        <article class="product">
+          <div class="product__thumb"></div>
+          <div class="product__body">
+            <h2 class="product__title">Poduszka</h2>
+            <p class="product__price">79,00 zł</p>
+            <button class="product__btn" type="button">Do koszyka</button>
+          </div>
+        </article>
+        <article class="product">
+          <div class="product__thumb"></div>
+          <div class="product__body">
+            <h2 class="product__title">Ręcznik</h2>
+            <p class="product__price">49,00 zł</p>
+            <button class="product__btn" type="button">Do koszyka</button>
+          </div>
+        </article>
+        <article class="product">
+          <div class="product__thumb"></div>
+          <div class="product__body">
+            <h2 class="product__title">Dywanik</h2>
+            <p class="product__price">99,00 zł</p>
+            <button class="product__btn" type="button">Do koszyka</button>
+          </div>
+        </article>
+        <article class="product">
+          <div class="product__thumb"></div>
+          <div class="product__body">
+            <h2 class="product__title">Doniczka</h2>
+            <p class="product__price">39,00 zł</p>
+            <button class="product__btn" type="button">Do koszyka</button>
+          </div>
+        </article>
+        <article class="product">
+          <div class="product__thumb"></div>
+          <div class="product__body">
+            <h2 class="product__title">Zegar</h2>
+            <p class="product__price">149,00 zł</p>
+            <button class="product__btn" type="button">Do koszyka</button>
+          </div>
+        </article>
+      </div>
+    </div>
+  </main>
+
+  <script src="js/nav.js" defer></script>
+</body>
+</html>

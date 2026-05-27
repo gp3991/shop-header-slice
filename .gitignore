@@ -1,0 +1,15 @@
+# Dependencies
+node_modules/
+
+# OS / editor
+.DS_Store
+
+# Logs
+*.log
+npm-debug.log*
+
+# Local test artifacts (Playwright MCP)
+.playwright-mcp/
+
+# Note: css/ (compiled output) is committed on purpose so index.html
+# works without running a build.

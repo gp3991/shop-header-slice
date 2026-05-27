@@ -1,0 +1,102 @@
+// ===== Reset / base =====
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font);
+  font-weight: 400;              // Outfit Regular = base weight
+  color: var(--c-ink);
+  background: var(--c-bg);
+  line-height: 1.4;
+  -webkit-font-smoothing: antialiased;
+}
+
+img,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+a {
+  color: inherit;
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+// Screen-reader-only text
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  border: 0;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+// Skip link (a11y)
+.skip-link {
+  position: absolute;
+  left: 0.5rem;
+  top: -3rem;
+  z-index: 100;
+  padding: 0.5rem 1rem;
+  background: var(--c-ink);
+  color: #fff;
+  border-radius: var(--radius);
+  transition: top 0.2s ease;
+
+  &:focus {
+    top: 0.5rem;
+  }
+}
+
+// Visible focus for keyboard navigation
+:focus-visible {
+  outline: 2px solid var(--c-focus);
+  outline-offset: 2px;
+}
+
+// Respect users who prefer reduced motion
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+  }
+}
+
+// Centered container
+.container {
+  width: 100%;
+  max-width: var(--container-max);
+  margin-inline: auto;
+  padding-inline: var(--container-pad);
+}
+
+// Demo content (out of task scope) — vertical spacing for the product grid
+.demo {
+  padding-block: clamp(2rem, 6vw, 4rem);
+}

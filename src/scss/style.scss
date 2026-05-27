@@ -1,0 +1,13 @@
+// ===========================================================
+//  Shop header — slicing from design (recruitment task)
+//  Mobile-first, BEM, breakpoints: 768px (tablet), 1200px (desktop)
+// ===========================================================
+
+@use 'variables' as *;
+@use 'base';
+@use 'topbar';
+@use 'header';
+@use 'search';
+@use 'actions';
+@use 'drawer';
+@use 'products';

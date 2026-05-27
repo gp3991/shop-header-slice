@@ -1,0 +1,102 @@
+@use 'variables' as *;
+
+// ===== Search =====
+// Bordered field; "Szukaj" submit + magnifier icon box on the right.
+
+.search {
+  order: 4;                 // mobile: separate row below the header
+  flex: 1 1 100%;
+  display: flex;
+  align-items: stretch;
+  height: 3.25rem;          // ~52px, matches the design field
+  border: 2px solid var(--c-ink); // bold square frame from the design
+  border-radius: 0;         // square corners (design)
+  overflow: hidden;
+  background: var(--c-bg);
+
+  // bottom margin only on mobile (search sits on its own row)
+  margin-bottom: 0.85rem;
+
+  // Tablet and desktop: middle zone of the single-row grid
+  @include from($bp-tablet) {
+    order: 0;               // reset order from the flex layout (mobile)
+    grid-column: 2;
+    align-self: center;     // vertically centered in the full-height row
+    width: 100%;
+    max-width: none;        // width is governed by the grid column (minmax)
+    margin: 0;
+  }
+
+  // text field
+  &__input {
+    flex: 1 1 auto;
+    min-width: 0;
+    border: 0;
+    background: transparent;
+    padding-inline: 1rem;    // tighter inset on mobile -> the placeholder fits
+    font-family: inherit;
+    font-size: 1rem;
+    color: var(--c-ink);
+    text-overflow: ellipsis; // "..." when the placeholder/value overflows
+
+    @include from($bp-tablet) {
+      padding-inline: 1.5rem; // ~24px left inset, matches the design
+    }
+
+    &::placeholder {
+      color: #222;           // dark placeholder, as in the design
+      opacity: 1;
+    }
+
+    &:focus {
+      outline: none;
+    }
+  }
+
+  // submit: "Szukaj" link + bare magnifier (no box/divider in the design)
+  &__submit {
+    flex: 0 0 auto;
+    display: inline-flex;
+    align-items: center;
+    gap: 1.2rem;             // ~19px between "Szukaj" and the magnifier
+    padding-inline: 1.2rem;  // ~19px inset from the field's right edge
+    background: transparent;
+    border: 0;
+    color: var(--c-ink);
+    cursor: pointer;
+
+    &:hover .search__text {
+      text-decoration-thickness: 2px;
+    }
+  }
+
+  &__text {
+    display: none;                    // mobile: icon-only submit, frees room for the placeholder
+    font-size: 1rem;
+    text-decoration: underline;
+    text-underline-offset: 2px;       // underline sits close to the baseline...
+    text-decoration-skip-ink: auto;   // ...so the "j" descender carves a gap (as in the design)
+
+    @include from($bp-tablet) {
+      display: inline;                // "Szukaj" label returns from tablet up (as in the design)
+    }
+  }
+
+  // bare magnifier icon (no surrounding box, matching the design)
+  &__icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    svg {
+      width: 18px;
+      height: 18px;
+    }
+  }
+
+  // focus ring on the whole field when the input is focused
+  &:focus-within {
+    outline: 2px solid var(--c-focus);
+    outline-offset: 2px;
+  }
+}

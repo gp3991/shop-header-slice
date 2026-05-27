@@ -1,0 +1,57 @@
+@use 'variables' as *;
+
+// ===== Utility bar (top) =====
+// Hidden on mobile — its links move into the drawer (.drawer).
+
+.topbar {
+  display: none;
+  border-bottom: 1px solid var(--c-line-soft);
+  font-size: 0.9375rem; // 15px
+
+  @include from($bp-tablet) {
+    display: block;
+  }
+
+  &__inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    padding-block: 0.85rem;
+  }
+
+  &__list {
+    display: flex;
+    align-items: center;
+    gap: 1.25rem;
+  }
+
+  // "/" separator between links
+  &__list li + li {
+    position: relative;
+    padding-left: 1.25rem;
+
+    &::before {
+      content: "/";
+      position: absolute;
+      left: 0;
+      color: var(--c-ink-soft);
+    }
+  }
+
+  &__link {
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    transition: color 0.2s ease;
+
+    &:hover {
+      color: var(--c-accent);
+    }
+  }
+
+  &__brand {
+    margin: 0;
+    font-weight: 700;
+    white-space: nowrap;
+  }
+}

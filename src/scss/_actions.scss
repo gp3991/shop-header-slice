@@ -1,0 +1,77 @@
+@use 'variables' as *;
+
+// ===== Actions: favourites / account / cart =====
+
+.actions {
+  order: 3;
+  display: flex;
+  align-items: stretch;
+
+  @include from($bp-tablet) {
+    order: 0;            // reset order from the flex layout (mobile)
+    grid-column: 3;      // right grid zone
+    justify-self: end;   // pinned to the navbar's right edge
+  }
+
+  &__item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.35rem;
+    padding: 0.25rem 0.75rem;
+    text-decoration: none;
+    color: var(--c-ink);                 // icons inherit via currentColor
+    transition: color 0.2s ease;
+
+    @include from($bp-tablet) {
+      padding-inline: clamp(1rem, 2vw, 1.75rem);
+    }
+
+    // text + icon recolor to the accent; icon lifts slightly
+    &:hover {
+      color: var(--c-accent);
+    }
+
+    &:hover .actions__icon {
+      transform: translateY(-2px);
+    }
+  }
+
+  &__icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    height: 24px;
+    transition: transform 0.2s ease;
+
+    svg {
+      width: 22px;
+      height: 22px;
+    }
+  }
+
+  &__label {
+    font-size: 0.875rem;
+    font-weight: 500;
+    line-height: 1;
+
+    // Mobile and tablet: icons only. Labels appear on desktop.
+    display: none;
+
+    @include from($bp-desktop) {
+      display: block;
+    }
+  }
+}
+
+// Vertical separators — from tablet up only (mobile = plain icons).
+// Pattern from the design: | before account, | before cart, | after cart.
+@include from($bp-tablet) {
+  .actions__item + .actions__item {
+    border-left: 1px solid var(--c-line-soft);
+  }
+  .actions__item:last-child {
+    border-right: 1px solid var(--c-line-soft);
+  }
+}

@@ -1,0 +1,123 @@
+@use 'variables' as *;
+
+// ===== Main bar + RWD orchestration =====
+//
+// Three states:
+//  - mobile  (<768):  [☰] [LOGO] [icons] / full-width search (row 2)
+//  - tablet  (≥768):  one row, logo | wide search | icons (icons only)
+//  - desktop (≥1200): one row, logo | centered search | icons (with labels)
+
+// Sticky wrapper: the whole bar (utility bar + main bar) pins to the top on scroll.
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 40;                 // above page content, below the mobile drawer (60)
+  background: var(--c-bg);
+  transition: box-shadow 0.2s ease;
+
+  // soft lift, added by JS only once the page has scrolled under the bar
+  &.is-stuck {
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+  }
+}
+
+.header {
+  border-top: 1px solid var(--c-line);
+  border-bottom: 1px solid var(--c-line);
+
+  &__inner {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.75rem 1rem;
+    padding-block: 0.75rem;
+    min-height: 4rem;
+
+    // Tablet: single row (logo | search | actions). Side columns are sized to
+    // their content (auto) and the middle (search) takes all remaining space,
+    // so the field is wide with no large gap next to the logo.
+    @include from($bp-tablet) {
+      display: grid;
+      grid-template-columns: auto minmax(0, 1fr) auto;
+      column-gap: clamp(1.5rem, 3vw, 2.5rem);
+      align-items: stretch;          // full-height action separators
+      padding-block: 0;
+      min-height: var(--header-h);
+    }
+
+    // Desktop: equal side columns (wider than the labeled actions) -> search is
+    // perfectly centered; when space runs short, the middle column shrinks.
+    @include from($bp-desktop) {
+      grid-template-columns: minmax(20rem, 1fr) minmax(0, 720px) minmax(20rem, 1fr);
+      column-gap: 0;
+    }
+  }
+}
+
+// --- Logo ---
+.logo {
+  order: 2;
+  margin-right: auto;               // pushes actions to the right (mobile/tablet)
+  display: inline-flex;
+  align-items: center;
+  font-weight: 700;
+  font-size: clamp(1.5rem, 2.4vw, 1.875rem);
+  letter-spacing: 0.02em;
+  text-decoration: none;
+  line-height: 1;
+
+  @include from($bp-tablet) {
+    order: 0;            // reset: grid-column controls position in the grid
+    grid-column: 1;
+    justify-self: start;
+    align-self: center;
+    margin-right: 0;
+  }
+}
+
+// --- Hamburger (mobile only) ---
+.burger {
+  order: 1;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.75rem;
+  height: 2.75rem;
+  margin-left: -0.5rem;             // optical alignment to the edge
+  padding: 0;
+  background: transparent;
+  border: 0;
+  color: var(--c-ink);
+
+  @include from($bp-tablet) {
+    display: none;
+  }
+
+  &__box {
+    display: block;
+    width: 22px;
+    height: 16px;
+    position: relative;
+  }
+
+  &__line {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: currentColor;
+    border-radius: 2px;
+    transition: transform 0.25s ease, opacity 0.2s ease;
+
+    &:nth-child(1) { top: 0; }
+    &:nth-child(2) { top: 7px; }
+    &:nth-child(3) { top: 14px; }
+  }
+
+  // Open state -> X (close icon)
+  &[aria-expanded="true"] {
+    .burger__line:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .burger__line:nth-child(2) { opacity: 0; }
+    .burger__line:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+  }
+}
